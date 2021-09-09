@@ -111,7 +111,7 @@ const initCharts = (props) => {
       type: 'value',
       // data: props.index == 8 ? ["平躺", "趴睡", "侧躺"] : '',
       min: 0,
-      // max: props.max,
+      max: props.max,
       // max: props.max ? props.max : 'unset',
       minInterval: 1,
       axisLabel: {
@@ -133,7 +133,10 @@ const initCharts = (props) => {
         color: '#000',
         markLine : {
           data : [{
-            yAxis : props.have
+            yAxis : props.have,
+            lineStyle : {
+              color : 'red'
+            }
           },
           {
             yAxis : props.min
@@ -234,7 +237,7 @@ function small(data) {
 
 
     // 第二版
-    if (nowdataarr[i] < 0.4 && nowdataarr[i] > 0.05) {
+    if (nowdataarr[i] < 0.5 && nowdataarr[i] > 0.05) {
 
       if (minArrArr1[i].length < 30) {
         minArrArr1[i].push(dataArr[i])
@@ -251,7 +254,7 @@ function small(data) {
       minArrArr1[i] = []
     }
 
-    if (nowdataarr[i] > 0.6 && nowdataarr[i] < 0.8) {
+    if (nowdataarr[i] > 0.5 && nowdataarr[i] < 0.95) {
       if (maxArrArr1[i].length < 30) {
         maxArrArr1[i].push(dataArr[i])
       } else {
